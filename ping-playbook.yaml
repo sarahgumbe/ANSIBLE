@@ -1,0 +1,9 @@
+- name: Ping my hosts/clients
+  hosts: all
+  tasks:
+    - name: Ping my hosts
+      ping:
+    - name: Create new files on hosts/client
+      shell: 'touch ansible-playbook.txt'
+    - name: Add some content to the created file above
+      shell: 'echo "HELLO SARAH" >> ansible-playbook.txt'
