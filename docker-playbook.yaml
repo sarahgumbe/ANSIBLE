@@ -1,6 +1,6 @@
 ---
 - name: Install Docker on Debian 11
-  hosts: your_debian_hosts
+  hosts: all
   become: true
 
   tasks:
