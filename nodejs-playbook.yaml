@@ -3,4 +3,4 @@
   tasks:
     - name: update cache
       apt:
-       update cache: yes
+       update_cache: yes
