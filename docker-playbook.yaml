@@ -15,9 +15,9 @@
         warn: false
 
     - name: Add Docker GPG key
-      command:
-        cmd: "curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg"
-        warn: false
+      shell: "curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg"
+      register: gpg_key_result
+      failed_when: "'curl: option' in gpg_key_result.stderr"
 
     - name: Add Docker repository
       command:
