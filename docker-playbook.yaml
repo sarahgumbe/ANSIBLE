@@ -6,7 +6,12 @@
   tasks:
     - name: Install Docker dependencies
       command:
-        cmd: "apt-get update && apt-get install -y curl gnupg lsb-release"
+        cmd: "apt-get update"
+        warn: false
+
+    - name: Install additional packages
+      command:
+        cmd: "apt-get install -y curl gnupg lsb-release"
         warn: false
 
     - name: Add Docker GPG key
@@ -33,4 +38,3 @@
       command:
         cmd: "systemctl start docker && systemctl enable docker"
         warn: false
-
