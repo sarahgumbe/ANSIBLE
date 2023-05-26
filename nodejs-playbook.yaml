@@ -2,9 +2,12 @@
   hosts: all
   tasks:
     - name: Update apt cache
-      command: apt update
+      apt:
+        update_cache: yes
 
     - name: Install Node.js
-      command: apt install -y nodejs
+      apt:
+        name: nodejs
+        state: present
 
 
