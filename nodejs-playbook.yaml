@@ -4,9 +4,6 @@
   become: yes
 
   tasks:
-    - name: Gathering Facts
-      gather_facts: true
-
     - name: Update cache
       apt:
         update_cache: yes
