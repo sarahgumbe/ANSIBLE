@@ -1,6 +1,6 @@
 ---
 - name: Install NodeJS
-  hosts: ansible-client-1, ansible-client-2
+  hosts: all
   become: yes
 
   tasks:
