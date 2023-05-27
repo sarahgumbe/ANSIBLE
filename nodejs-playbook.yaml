@@ -1,7 +1,11 @@
 - name: Install NodeJS
-  hosts: all
+  become: yes
+  gather_facts: yes
   tasks:
     - name: update cache
       apt:
         update_cache: yes
+  debug:
+    var: ansible_ssh_executable
+    verbosity: 2
 
