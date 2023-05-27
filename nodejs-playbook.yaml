@@ -1,8 +1,12 @@
+---
 - name: Install NodeJS
+  hosts: ansible-client-1, ansible-client-2
   become: yes
+
   tasks:
     - name: Gathering Facts
-      gather_facts: yes
-    - name: update cache
+      gather_facts: true
+
+    - name: Update cache
       apt:
         update_cache: yes
